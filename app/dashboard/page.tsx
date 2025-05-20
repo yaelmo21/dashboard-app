@@ -1,6 +1,7 @@
 import FadeInUp from '@/presentation/components/animations/FadeInUp';
 import {
   Charts,
+  Files,
   Search,
   StantsGrid,
 } from '@/presentation/components/HomeScreen';
@@ -25,7 +26,7 @@ const DashboardHome = () => {
   };
 
   return (
-    <div className='max-w-7xl mx-auto flex flex-col gap-4 px-1 md:px-4 lg:px-12'>
+    <div className='max-w-7xl mx-auto flex flex-col gap-4 px-1 md:px-4 lg:px-12 '>
       <FadeInUp>
         <div className='hidden md:flex justify-between items-center w-full'>
           <PageHeading title='Overview' />
@@ -43,6 +44,7 @@ const DashboardHome = () => {
       </FadeInUp>
       <StantsGrid stants={stats} />
       <Charts />
+      <Files />
     </div>
   );
 };
