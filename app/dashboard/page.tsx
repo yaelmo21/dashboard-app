@@ -1,4 +1,5 @@
-import { Notifications, Search } from '@/presentation/components/HomeScreen';
+import { Search } from '@/presentation/components/HomeScreen';
+import Notifications from '@/presentation/components/shared/Notifications';
 import Divider from '@/presentation/components/ui/Divider';
 import PageHeading from '@/presentation/components/ui/PageHeading';
 import AvatarUser from '@/presentation/components/users/AvatarUser';
