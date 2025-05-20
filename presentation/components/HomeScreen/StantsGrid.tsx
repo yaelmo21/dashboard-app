@@ -9,7 +9,7 @@ interface StantsGridProps {
 
 const StantsGrid: FC<StantsGridProps> = ({ stants }) => {
   return (
-    <div className='grid grid-cols-2 gap-1 sm:gap-4 lg:grid-cols-4'>
+    <section className='grid grid-cols-2 gap-1 sm:gap-4 lg:grid-cols-4'>
       {stants.map((stant, index) => (
         <StantItem
           key={stant.label}
@@ -18,7 +18,7 @@ const StantsGrid: FC<StantsGridProps> = ({ stants }) => {
           index={index}
         />
       ))}
-    </div>
+    </section>
   );
 };
 
