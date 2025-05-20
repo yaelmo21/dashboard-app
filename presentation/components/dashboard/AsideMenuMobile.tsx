@@ -5,7 +5,7 @@ import {
   DialogPanel,
   TransitionChild,
 } from '@headlessui/react';
-import { XMarkIcon } from '@heroicons/react/24/outline';
+
 import HeaderList from './HeaderList';
 import ListNavigation from './ListNavigation';
 import Divider from '../ui/Divider';
@@ -13,6 +13,7 @@ import {
   fistMenuItems,
   secondMenuItems,
 } from '@/presentation/navigation/navbarItems';
+import { HiXMark } from 'react-icons/hi2';
 
 interface AsideMenuMobileProps {
   sidebarOpen: boolean;
@@ -46,7 +47,7 @@ const AsideMenuMobile: FC<AsideMenuMobileProps> = ({
                 className='-m-2.5 p-2.5'
               >
                 <span className='sr-only'>Close sidebar</span>
-                <XMarkIcon
+                <HiXMark
                   aria-hidden='true'
                   className='size-6 text-white'
                 />
