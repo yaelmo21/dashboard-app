@@ -1,4 +1,9 @@
-import { Search, StantsGrid } from '@/presentation/components/HomeScreen';
+import FadeInUp from '@/presentation/components/animations/FadeInUp';
+import {
+  Charts,
+  Search,
+  StantsGrid,
+} from '@/presentation/components/HomeScreen';
 import Notifications from '@/presentation/components/shared/Notifications';
 import Divider from '@/presentation/components/ui/Divider';
 import PageHeading from '@/presentation/components/ui/PageHeading';
@@ -20,21 +25,24 @@ const DashboardHome = () => {
   };
 
   return (
-    <div className='w-full flex flex-col gap-4 px-1 md:px-4 lg:px-12'>
-      <div className='hidden md:flex justify-between items-center w-full'>
-        <PageHeading title='Overview' />
-        <div className='flex items-center gap-10'>
-          <Search />
-          <Notifications count={1} />
-          <Divider orientation='vertical' />
-          <AvatarUser
-            name={user.name}
-            imageUrl={user.imageUrl}
-            size='md'
-          />
+    <div className='max-w-7xl mx-auto flex flex-col gap-4 px-1 md:px-4 lg:px-12'>
+      <FadeInUp>
+        <div className='hidden md:flex justify-between items-center w-full'>
+          <PageHeading title='Overview' />
+          <div className='flex items-center gap-10'>
+            <Search />
+            <Notifications count={1} />
+            <Divider orientation='vertical' />
+            <AvatarUser
+              name={user.name}
+              imageUrl={user.imageUrl}
+              size='md'
+            />
+          </div>
         </div>
-      </div>
+      </FadeInUp>
       <StantsGrid stants={stats} />
+      <Charts />
     </div>
   );
 };
