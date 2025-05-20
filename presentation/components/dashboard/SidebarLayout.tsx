@@ -4,15 +4,11 @@ import MobileNavbar from './MobileNavbar';
 
 const SidebarLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div className='flex flex-row h-full'>
+    <div className='flex flex-row h-full w-screen'>
       <Navbar />
       <MobileNavbar />
-      <div>
-        <main className='py-10'>
-          <div className='px-4 sm:px-6 lg:px-8 pt-[30px] sm:pt-0 md:pl-[80px] lg:pl-[260px]'>
-            {children}
-          </div>
-        </main>
+      <div className='bg-secondary w-full pt-[30px] md:pt-0 md:pl-[70px] lg:pl-[260px] min-h-full overflow-y-auto'>
+        <main className='py-10 min-h-full '>{children}</main>
       </div>
     </div>
   );
