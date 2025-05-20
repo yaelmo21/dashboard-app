@@ -1,11 +1,18 @@
+'use client';
 import React from 'react';
 import HeaderCard from './HeaderCard';
 import LoginForm from './LoginForm';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const CardLogin = () => {
   return (
-    <div className='bg-white shadow-md rounded-md flex flex-col justify-between gap-10 px-12 py-12 w-[calc(100%-1rem)] h-5/6 md:h-auto  md:w-5/6 xl:w-96'>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className='bg-white shadow-md rounded-md flex flex-col justify-between gap-10 px-12 py-12 w-[calc(100%-1rem)] h-5/6 md:h-auto  md:w-5/6 xl:w-96'
+    >
       <div className='flex flex-col gap-10'>
         <HeaderCard />
         <div>
@@ -27,7 +34,7 @@ const CardLogin = () => {
           Sign Up
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
