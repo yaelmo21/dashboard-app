@@ -13,6 +13,8 @@ const LoginForm = () => {
         label='EMAIL'
         classLabel='text-muted'
         placeholder='Email address'
+        error={true}
+        messageError='Invalid email format'
       />
       <InputPassword
         label='PASSWORD'

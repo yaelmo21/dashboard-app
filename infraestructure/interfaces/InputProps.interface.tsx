@@ -5,4 +5,6 @@ export interface InputProps
   classInput?: string;
   rightElementInput?: React.ReactNode;
   rightElementLabel?: React.ReactNode;
+  error?: boolean;
+  messageError?: string;
 }
