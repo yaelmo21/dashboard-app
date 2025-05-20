@@ -1,14 +1,16 @@
 'use client';
 import React from 'react';
-import Input from '../ui/forms/Input';
 import Link from 'next/link';
-import { Button } from '../ui/Button';
-
-import InputPassword from '../ui/forms/InputPassword';
+import Cookies from 'js-cookie';
 import { useFormik } from 'formik';
+import Input from '../ui/forms/Input';
+import { Button } from '../ui/Button';
+import InputPassword from '../ui/forms/InputPassword';
 import { loginValidationSchema } from '@/validation/LoginValidation';
+import { useRouter } from 'next/navigation';
 
 const LoginForm = () => {
+  const router = useRouter();
   const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
     useFormik({
       initialValues: {
@@ -16,7 +18,12 @@ const LoginForm = () => {
         password: '',
       },
       onSubmit: (values) => {
-        console.log(values);
+        const { email, password } = values;
+        if (email === 'admin@admin.com' && password === 'admin') {
+          Cookies.set('token', 'admin');
+          router.replace('/');
+          return;
+        }
       },
       validationSchema: loginValidationSchema,
     });

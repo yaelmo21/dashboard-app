@@ -1,44 +1,21 @@
-import Image from 'next/image';
+'use client';
+import Cookies from 'js-cookie';
+import { redirect } from 'next/navigation';
+import { useEffect } from 'react';
 
-export default function Home() {
-  const colors = [
-    {
-      name: 'primary',
-      color: 'bg-primary',
-    },
-    {
-      name: 'secondary',
-      color: 'bg-secondary',
-    },
-    {
-      name: 'surface',
-      color: 'bg-surface',
-    },
-    {
-      name: 'tertiary',
-      color: 'bg-tertiary',
-    },
-    {
-      name: 'muted',
-      color: 'bg-muted',
-    },
-    {
-      name: 'border',
-      color: 'bg-border',
-    },
-  ];
+export default async function Home() {
+  const verifyToken = () => {
+    const token = Cookies.get('token');
+    if (token) {
+      return redirect('/dashboard');
+    }
 
-  return (
-    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'>
-      {colors.map((color) => (
-        <div
-          key={color.name}
-          className='flex flex-col items-center gap-10'
-        >
-          <div className={`w-full h-96 ${color.color}`}></div>
-          <strong className='text-sm'>{color.name}</strong>
-        </div>
-      ))}
-    </div>
-  );
+    return redirect('/auth/login');
+  };
+
+  useEffect(() => {
+    verifyToken();
+  }, []);
+
+  return <></>;
 }
