@@ -1,5 +1,15 @@
 @import 'tailwindcss';
 
+/* ThemeApp */
+@theme {
+  --color-primary: #3751ff;
+  --color-secondary: #f5f5f7;
+  --color-surface: #ffffff;
+  --color-tertiary: #292933;
+  --color-muted: #78798b;
+  --color-border: #c7c7d2;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
