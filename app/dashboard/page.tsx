@@ -1,9 +1,16 @@
-import { Search } from '@/presentation/components/HomeScreen';
+import { Search, StantsGrid } from '@/presentation/components/HomeScreen';
 import Notifications from '@/presentation/components/shared/Notifications';
 import Divider from '@/presentation/components/ui/Divider';
 import PageHeading from '@/presentation/components/ui/PageHeading';
 import AvatarUser from '@/presentation/components/users/AvatarUser';
 import React from 'react';
+
+const stats = [
+  { label: 'Unresolved', value: 60 },
+  { label: 'Overdue', value: 16 },
+  { label: 'Open', value: 43 },
+  { label: 'On hold', value: 64 },
+];
 
 const DashboardHome = () => {
   const user = {
@@ -13,7 +20,7 @@ const DashboardHome = () => {
   };
 
   return (
-    <div className='px-4 sm:px-6 w-full '>
+    <div className='w-full flex flex-col gap-4 px-1 md:px-4 lg:px-12'>
       <div className='hidden md:flex justify-between items-center w-full'>
         <PageHeading title='Overview' />
         <div className='flex items-center gap-10'>
@@ -27,6 +34,7 @@ const DashboardHome = () => {
           />
         </div>
       </div>
+      <StantsGrid stants={stats} />
     </div>
   );
 };
