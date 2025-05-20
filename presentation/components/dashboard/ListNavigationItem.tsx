@@ -1,8 +1,18 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
 import { NavbarItem } from '@/infraestructure/interfaces/NavbarItem.inteface';
+import clsx from 'clsx';
 
-const ListNavigationItem: FC<NavbarItem> = ({ name, icon: Icon, href }) => {
+interface Props extends NavbarItem {
+  automaticHiddeTitle?: boolean;
+}
+
+const ListNavigationItem: FC<Props> = ({
+  name,
+  icon: Icon,
+  href,
+  automaticHiddeTitle = true,
+}) => {
   return (
     <li>
       <Link
@@ -13,7 +23,11 @@ const ListNavigationItem: FC<NavbarItem> = ({ name, icon: Icon, href }) => {
           className='h-4 w-4'
           aria-hidden='true'
         />
-        <span className='text-sm font-semibold leading-6 hidden lg:block'>
+        <span
+          className={`text-sm font-semibold leading-6 ${clsx(
+            automaticHiddeTitle && 'hidden lg:block',
+          )}`}
+        >
           {name}
         </span>
       </Link>

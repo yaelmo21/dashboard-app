@@ -4,7 +4,8 @@ import ListNavigationItem from './ListNavigationItem';
 
 const ListNavigation: FC<{
   items: NavbarItem[];
-}> = ({ items }) => {
+  automaticHiddeTitle?: boolean;
+}> = ({ items, automaticHiddeTitle }) => {
   return (
     <ul
       role='list'
@@ -13,6 +14,7 @@ const ListNavigation: FC<{
       {items.map((item) => (
         <ListNavigationItem
           key={item.id}
+          automaticHiddeTitle={automaticHiddeTitle}
           {...item}
         />
       ))}

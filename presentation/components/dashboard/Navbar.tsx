@@ -7,6 +7,7 @@ import {
   fistMenuItems,
   secondMenuItems,
 } from '@/presentation/navigation/navbarItems';
+import Divider from '../ui/Divider';
 
 const Navbar = () => {
   return (
@@ -18,12 +19,7 @@ const Navbar = () => {
     >
       <HeaderList />
       <ListNavigation items={fistMenuItems} />
-      <div
-        aria-hidden='true'
-        className='inset-0 flex items-center'
-      >
-        <div className='w-full border-t border-gray-700' />
-      </div>
+      <Divider />
       <ListNavigation items={secondMenuItems} />
     </motion.aside>
   );
