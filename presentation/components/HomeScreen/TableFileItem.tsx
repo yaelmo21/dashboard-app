@@ -84,7 +84,10 @@ const TableFileItem: FC<FileItem> = ({
         {uploadBy}
       </td>
       <td className='px-3 py-4 text-sm whitespace-nowrap text-gray-500 hidden lg:table-cell'>
-        <button>
+        <button
+          type='button'
+          className='inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200'
+        >
           <FaEllipsisV className='text-muted w-3 h-3 ' />
         </button>
       </td>
