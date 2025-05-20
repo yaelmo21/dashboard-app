@@ -7,12 +7,8 @@ const SidebarLayout: FC<PropsWithChildren> = ({ children }) => {
     <div className='flex flex-row h-full w-screen'>
       <Navbar />
       <MobileNavbar />
-      <div className='bg-secondary'>
-        <main className='py-10 '>
-          <div className='px-4 sm:px-6 lg:px-8 pt-[30px] sm:pt-0 md:pl-[80px] lg:pl-[260px] w-screen '>
-            {children}
-          </div>
-        </main>
+      <div className='bg-secondary w-full pt-[30px] md:pt-0 md:pl-[70px] lg:pl-[260px] '>
+        <main className='py-10'>{children}</main>
       </div>
     </div>
   );
