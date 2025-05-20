@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Logo from '@/assets/images/logo.svg';
 import Image from 'next/image';
-import { FaBell } from 'react-icons/fa6';
+
 import AsideMenuMobile from './AsideMenuMobile';
+import Notifications from '../shared/Notifications';
+
 const MobileNavbar = () => {
   const [open, setOpen] = useState(false);
 
@@ -30,12 +32,7 @@ const MobileNavbar = () => {
           />
         </button>
 
-        <button>
-          <FaBell
-            className='h-4 w-4 text-gray-500 hover:text-gray-200 transition-all duration-200 ease-in-out'
-            aria-hidden='true'
-          />
-        </button>
+        <Notifications count={1} />
       </motion.nav>
 
       <AsideMenuMobile

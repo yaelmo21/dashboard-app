@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-const Divider = () => {
+interface DividerProps {
+  orientation?: 'horizontal' | 'vertical';
+}
+
+const Divider: FC<DividerProps> = ({ orientation = 'horizontal' }) => {
+  if (orientation === 'vertical') {
+    return <div className='h-7 border-l border-gray-300' />;
+  }
+
   return (
     <div
       aria-hidden='true'
