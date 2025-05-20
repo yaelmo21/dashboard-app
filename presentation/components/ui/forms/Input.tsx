@@ -1,12 +1,5 @@
+import { InputProps } from '@/infraestructure/interfaces/InputProps.interface';
 import React, { FC } from 'react';
-
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
-  classLabel?: string;
-  classInput?: string;
-  rightElementInput?: React.ReactNode;
-  rightElementLabel?: React.ReactNode;
-}
 
 const Input: FC<InputProps> = ({
   label,

@@ -2,29 +2,23 @@
 import React from 'react';
 import Input from '../ui/forms/Input';
 import Link from 'next/link';
+import { Button } from '../ui/Button';
+
+import InputPassword from '../ui/forms/InputPassword';
 
 const LoginForm = () => {
   return (
     <>
-      <div>
-        <h2 className='text-2xl font-bold text-center text-gray-900'>
-          Log In to Dashboard Kit
-        </h2>
-        <h3 className='text-sm text-center text-muted mt-2'>
-          Enter your email and password below
-        </h3>
-      </div>
       <form className='flex flex-col gap-4'>
         <Input
           label='EMAIL'
           classLabel='text-muted'
           placeholder='Email address'
         />
-        <Input
+        <InputPassword
           label='PASSWORD'
           classLabel='text-muted'
           placeholder='Password'
-          type='password'
           rightElementLabel={
             <Link
               href='/auth/forgot-password'
@@ -34,7 +28,18 @@ const LoginForm = () => {
             </Link>
           }
         />
+        <Button size='lg'>Log In</Button>
       </form>
+
+      <div className='flex items-center justify-center gap-2 mt-4'>
+        <span className='text-sm text-muted'>Don&apos;t have an account?</span>
+        <Link
+          href='/auth/register'
+          className='text-sm font-semibold text-primary hover:text-primary'
+        >
+          Sign Up
+        </Link>
+      </div>
     </>
   );
 };
