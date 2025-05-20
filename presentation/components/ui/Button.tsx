@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import clsx from 'clsx';
+import { IconType } from 'react-icons';
 
 type ButtonProps = {
   children: React.ReactNode;
@@ -10,9 +11,11 @@ type ButtonProps = {
     | 'surface'
     | 'tertiary'
     | 'muted'
-    | 'border';
+    | 'border'
+    | 'purple';
   type?: 'button' | 'submit' | 'reset';
   className?: string;
+  icon?: IconType;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const sizeClasses = {
@@ -30,6 +33,7 @@ const variantClasses = {
   tertiary: 'bg-tertiary text-white hover:bg-gray-800',
   muted: 'bg-muted text-white hover:bg-gray-500',
   border: 'border border-border text-tertiary bg-white hover:bg-gray-50',
+  purple: 'bg-alternative text-white hover:opacity-80',
 };
 
 export const Button: React.FC<ButtonProps> = ({
@@ -38,6 +42,7 @@ export const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   type = 'button',
   className = '',
+  icon: Icon,
   ...props
 }) => {
   return (
@@ -45,12 +50,14 @@ export const Button: React.FC<ButtonProps> = ({
       type={type}
       className={clsx(
         'font-semibold shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2',
+        Icon && 'flex items-center gap-x-3',
         sizeClasses[size],
         variantClasses[variant],
         className,
       )}
       {...props}
     >
+      {Icon && <Icon />}
       {children}
     </button>
   );
