@@ -13,7 +13,7 @@ const DashboardHome = () => {
 
   return (
     <div className='px-4 sm:px-6 w-full '>
-      <div className='flex justify-between items-center w-full '>
+      <div className='hidden md:flex justify-between items-center w-full'>
         <PageHeading title='Overview' />
         <div className='flex items-center gap-10'>
           <Search />
