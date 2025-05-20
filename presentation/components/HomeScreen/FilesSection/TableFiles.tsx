@@ -1,7 +1,7 @@
 'use client';
 import React, { FC } from 'react';
 import { FileItem } from '@/infraestructure/interfaces/FileItem.interface';
-import CheckBox from '../ui/forms/CheckBox';
+import CheckBox from '../../ui/forms/CheckBox';
 import TableFileItem from './TableFileItem';
 import { useFileContext } from '@/presentation/context/FileContext';
 

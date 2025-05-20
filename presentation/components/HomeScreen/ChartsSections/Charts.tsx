@@ -1,9 +1,9 @@
 import React from 'react';
 import GraphImage from '@/assets/images/graph.svg';
 import Image from 'next/image';
-import ChartsKpisList from './ChartsKpisList';
 import { Kpi } from '@/infraestructure/interfaces/Kpi.interface';
-import FadeInUp from '../animations/FadeInUp';
+import FadeInUp from '../../animations/FadeInUp';
+import ChartsKpisList from './ChartsKpisList';
 
 const kpis: Kpi[] = [
   {

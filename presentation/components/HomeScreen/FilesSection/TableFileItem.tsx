@@ -1,13 +1,13 @@
 'use client';
 import React, { FC } from 'react';
 import { FaEllipsisV } from 'react-icons/fa';
-import CheckBox from '../ui/forms/CheckBox';
 import { FileItem } from '@/infraestructure/interfaces/FileItem.interface';
 import { HiOutlineFilm, HiOutlinePhotograph } from 'react-icons/hi';
 import { SiFigma } from 'react-icons/si';
 import { HiOutlineDocument } from 'react-icons/hi2';
 import { FiFramer } from 'react-icons/fi';
 import { useFileContext } from '@/presentation/context/FileContext';
+import CheckBox from '../../ui/forms/CheckBox';
 
 const IconFile = (mimetype: string, name?: string) => {
   if (mimetype === 'application/pdf' || mimetype === 'application/x-pdf') {
