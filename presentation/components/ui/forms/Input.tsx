@@ -20,7 +20,7 @@ const Input = ({
           <label
             htmlFor={id}
             className={clsx(
-              'block text-sm/6 font-medium',
+              'block font-bold tracking-[0.3px] text-[12px]',
               error ? 'text-red-600' : 'text-gray-900',
               classLabel,
             )}

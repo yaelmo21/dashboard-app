@@ -16,10 +16,10 @@ const CardLogin = () => {
       <div className='flex flex-col gap-10'>
         <HeaderCard />
         <div>
-          <h2 className='text-2xl font-bold text-center text-gray-900'>
+          <h2 className='text-[24px] font-bold text-center text-gray-900'>
             Log In to Dashboard Kit
           </h2>
-          <h3 className='text-sm text-center text-muted mt-2'>
+          <h3 className='text-[14px] text-center text-muted mt-2'>
             Enter your email and password below
           </h3>
         </div>

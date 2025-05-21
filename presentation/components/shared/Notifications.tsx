@@ -17,7 +17,7 @@ const Notifications: FC<NotificationsProps> = ({ count = 0 }) => {
         aria-hidden='true'
       />
       {count > 0 && (
-        <span className='absolute top-0 right-0 block size-2 translate-x-1/2 -translate-y-1/2 transform rounded-full bg-primary ring-2 ring-white' />
+        <span className='absolute top-0 right-0 block size-2 translate-x-1/2 -translate-y-1/2 transform rounded-full bg-primary ring-2 ring-primary' />
       )}
     </button>
   );

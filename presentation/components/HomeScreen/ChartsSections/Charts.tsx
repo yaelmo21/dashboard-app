@@ -1,5 +1,5 @@
 import React from 'react';
-import GraphImage from '@/assets/images/graph.svg';
+import GraphImage from '@/assets/images/graph.png';
 import Image from 'next/image';
 import { Kpi } from '@/infraestructure/interfaces/Kpi.interface';
 import FadeInUp from '../../animations/FadeInUp';
@@ -31,8 +31,8 @@ const kpis: Kpi[] = [
 const Charts = () => {
   return (
     <FadeInUp>
-      <section className='flex flex-row bg-white rounded-lg shadow-md'>
-        <div className='sm:w-4/6 p-4'>
+      <section className='flex flex-row bg-white rounded-lg shadow-md p-4 gap-4 '>
+        <div className='w-full  sm:w-4/6 p-4'>
           <div className='flex flex-col lg:flex-row justify-between md:items-end gap-4'>
             <div className='w-full'>
               <h2 className='text-lg  text-gray-900'>Today’s trends</h2>
@@ -55,8 +55,7 @@ const Charts = () => {
           <Image
             src={GraphImage}
             alt='Graph'
-            className='w-full h-96 lg:max-h-96  object-cover'
-            priority
+            className='w-full md:h-96 lg:h-auto'
           />
         </div>
         <div className='hidden sm:block flex-1 border-l border-gray-200'>
