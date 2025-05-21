@@ -2,7 +2,7 @@
 import { InputProps } from '@/infraestructure/interfaces/InputProps.interface';
 import React, { FC, useState } from 'react';
 import Input from './Input';
-import { FiEyeOff, FiEye } from 'react-icons/fi';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const InputPassword: FC<Omit<Omit<InputProps, 'rightElementInput'>, 'type'>> = (
   props,
@@ -20,12 +20,12 @@ const InputPassword: FC<Omit<Omit<InputProps, 'rightElementInput'>, 'type'>> = (
           onClick={tooglePassword}
         >
           {viewPassword ? (
-            <FiEyeOff
+            <FaEyeSlash
               className='text-muted'
               aria-label='Show password'
             />
           ) : (
-            <FiEye
+            <FaEye
               className='text-muted'
               aria-label='Show password'
             />

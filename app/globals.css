@@ -5,13 +5,13 @@
   --color-primary: #3751ff;
   --color-secondary: #f7f8fc;
   --color-surface: #ffffff;
-  --color-tertiary: #292933;
-  --color-muted: #a4a6b3;
+  --color-tertiary: #363740;
+  --color-muted: #667085;
   --color-border: #c7c7d2;
   --color-alternative: #7f56d9;
   --color-alternative-muted: #f4ebff;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Mulish, Arial, Helvetica, sans-serif;
 }

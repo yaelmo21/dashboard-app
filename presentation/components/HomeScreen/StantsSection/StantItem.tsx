@@ -31,7 +31,7 @@ const StantItem: FC<StantItemProps> = ({ label, value, index }) => {
       <p className='text-sm font-semibold text-muted group-hover:text-primary transition-colors duration-100'>
         {label}
       </p>
-      <p className='text-4xl font-bold text-gray-900  group-hover:text-primary transition-colors duration-100'>
+      <p className='font-bold text-[40px] text-gray-900  group-hover:text-primary transition-colors duration-100'>
         {value}
       </p>
     </motion.div>

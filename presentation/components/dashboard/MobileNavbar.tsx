@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Logo from '@/assets/images/logo.svg';
-import Image from 'next/image';
 
 import AsideMenuMobile from './AsideMenuMobile';
 import Notifications from '../shared/Notifications';
@@ -25,11 +24,7 @@ const MobileNavbar = () => {
           onClick={toogleSidebar}
           className='cursor-pointer'
         >
-          <Image
-            src={Logo}
-            alt='Logo Dashboard kit'
-            className='w-8 h-8'
-          />
+          <Logo className='w-8 h-8' />
         </button>
 
         <Notifications count={1} />

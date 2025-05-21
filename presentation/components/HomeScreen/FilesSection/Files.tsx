@@ -1,10 +1,10 @@
 import React from 'react';
-import FadeInUp from '../animations/FadeInUp';
 import { FileProvider } from '@/presentation/context/FileContext';
-import { Button } from '../ui/Button';
 import { FiUploadCloud } from 'react-icons/fi';
 import { FileItem } from '@/infraestructure/interfaces/FileItem.interface';
 import TableFiles from './TableFiles';
+import FadeInUp from '../../animations/FadeInUp';
+import { Button } from '../../ui/Button';
 
 export const files: FileItem[] = [
   {
