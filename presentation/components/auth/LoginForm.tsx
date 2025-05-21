@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
 import { useFormik } from 'formik';
@@ -8,8 +8,11 @@ import { Button } from '../ui/Button';
 import InputPassword from '../ui/forms/InputPassword';
 import { loginValidationSchema } from '@/validation/LoginValidation';
 import { useRouter } from 'next/navigation';
+import { Alert } from '../ui/Alert';
+import FadeInUp from '../animations/FadeInUp';
 
 const LoginForm = () => {
+  const [viewError, setViewError] = useState(false);
   const router = useRouter();
   const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
     useFormik({
@@ -24,9 +27,16 @@ const LoginForm = () => {
           router.replace('/');
           return;
         }
+        setViewError(true);
       },
       validationSchema: loginValidationSchema,
     });
+
+  useEffect(() => {
+    if (viewError) {
+      setViewError(false);
+    }
+  }, [values]);
 
   return (
     <form
@@ -64,6 +74,16 @@ const LoginForm = () => {
           </Link>
         }
       />
+      {viewError && (
+        <FadeInUp>
+          <Alert
+            type='error'
+            message='Please check your email and password.'
+            dismissible
+            onDismiss={() => setViewError(false)}
+          />
+        </FadeInUp>
+      )}
       <Button
         size='lg'
         type='submit'
