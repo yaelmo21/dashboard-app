@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
 import { useFormik } from 'formik';
@@ -31,6 +31,12 @@ const LoginForm = () => {
       },
       validationSchema: loginValidationSchema,
     });
+
+  useEffect(() => {
+    if (viewError) {
+      setViewError(false);
+    }
+  }, [values]);
 
   return (
     <form
