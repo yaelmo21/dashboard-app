@@ -17,7 +17,7 @@ const sizeMap = {
 const AvatarUser: FC<AvatarUserProps> = ({ name, imageUrl, size = 'sm' }) => {
   return (
     <div className='flex items-center space-x-3'>
-      <span className='text-sm font-semibold text-gray-900 '>
+      <span className='text-sm font-normal text-gray-900 '>
         <span className='hidden lg:inline'>{name}</span>
       </span>
       {imageUrl && (

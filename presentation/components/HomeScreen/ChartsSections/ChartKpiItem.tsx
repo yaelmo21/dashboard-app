@@ -1,5 +1,5 @@
-import { Kpi } from '@/infraestructure/interfaces/Kpi.interface';
 import React, { FC } from 'react';
+import { Kpi } from '@/infraestructure/interfaces/Kpi.interface';
 
 const ChartKpiItem: FC<Kpi> = ({ label, value }) => {
   return (

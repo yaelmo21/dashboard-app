@@ -32,7 +32,7 @@ const variantClasses = {
   surface: 'bg-surface text-tertiary border border-border hover:bg-gray-50',
   tertiary: 'bg-tertiary text-white hover:bg-gray-800',
   muted: 'bg-muted text-white hover:bg-gray-500',
-  border: 'border border-border text-tertiary bg-white hover:bg-gray-50',
+  border: 'border border-[#D0D5DD] text-tertiary bg-white hover:bg-gray-50',
   purple: 'bg-alternative text-white hover:opacity-80',
 };
 
