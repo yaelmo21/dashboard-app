@@ -1,43 +1,34 @@
 'use client';
 import React, { FC } from 'react';
+import { FaFigma, FaFilm, FaRegFile, FaRegImage } from 'react-icons/fa6';
 import { FaEllipsisV } from 'react-icons/fa';
 import { FileItem } from '@/infraestructure/interfaces/FileItem.interface';
-import { HiOutlineFilm, HiOutlinePhotograph } from 'react-icons/hi';
-import { SiFigma } from 'react-icons/si';
-import { HiOutlineDocument } from 'react-icons/hi2';
 import { FiFramer } from 'react-icons/fi';
 import { useFileContext } from '@/presentation/context/FileContext';
 import CheckBox from '../../ui/forms/CheckBox';
 
 const IconFile = (mimetype: string, name?: string) => {
   if (mimetype === 'application/pdf' || mimetype === 'application/x-pdf') {
-    return HiOutlineDocument;
+    return FaRegFile;
   }
 
   if (mimetype.includes('image/')) {
-    return HiOutlinePhotograph;
+    return FaRegImage;
   }
 
   if (mimetype.includes('video/')) {
-    return HiOutlineFilm;
+    return FaFilm;
   }
 
   if (mimetype === 'application/octet-stream' && name?.endsWith('.fig')) {
-    return SiFigma;
-  }
-
-  if (
-    mimetype ===
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-  ) {
-    return HiOutlineDocument;
+    return FaFigma;
   }
 
   if (mimetype === 'application/octet-stream' && name?.endsWith('.framerx')) {
     return FiFramer;
   }
 
-  return HiOutlineDocument;
+  return FaRegFile;
 };
 
 const TableFileItem: FC<FileItem> = ({
